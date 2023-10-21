@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu-bar {
+        display: flex;
+        background-color: white;
+        justify-content: space-between;
+        padding-top: 14px;
+        padding-bottom: 15px;
+        text-transform: uppercase;
+        border-bottom: 7px solid rgb(102, 201, 156);
+    }
+
+    #company-name {
+        color: #333;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-left: 4em;
+        margin-top: 14px;
+    }
+
+    #menu-items {
+        margin-right: 7.5em;
+        position: relative;
+        top: 10px;
+        display: flex;
+        font-family: 'PT Sans', sans-serif;
+        font-weight: 100;
+        letter-spacing: 2px;
+        gap: 60px;
+    }
+
+    #menu-items li {
+        display: inline;
+        position: relative;
+    }
+
+    #menu-items a {
+        text-decoration: none;
+        padding: 5px 10px;
+        color: #333;
+    }
+
+    #menu-items a:hover {
+        background-color: rgb(102, 201, 156);
+        color: black;
+        padding-bottom: 29px;
+        padding-top: 15px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    #menu-items li:hover a {
+        background-color: rgb(102, 201, 156);
+        color: black;
+        padding-bottom: 29px;
+        padding-top: 15px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    #locations-dropdown {
+        position: absolute;
+        display: none;
+    }
+
+    #menu-items li:hover #locations-dropdown {
+        display: block;
+        top: 49px;
+    }
+
+    #locations-container {
+        background-color: rgb(102, 201, 156);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #locations-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #locations-container ul li {
+        display: block;
+        padding: 20px 5px 20px 5px;
+        width: 170px;
+        color: white;
+        transition: background-color 0.2s;
+        text-align: center;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    #locations-container ul li:hover {
+        background-color: rgb(67, 150, 106);
+    }
+
+    #locations-container ul li:last-child:hover {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #about-dropdown {
+        position: absolute;
+        display: none;
+    }
+
+    #menu-items li:hover #about-dropdown {
+        display: block;
+        top: 49px;
+    }
+
+    #about-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #about-container {
+        background-color: rgb(102, 201, 156);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #about-container ul li {
+        display: block;
+        padding: 20px 5px 20px 5px;
+        width: 233px;
+        color: white;
+        transition: background-color 0.2s;
+        text-align: center;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    #about-container ul li:hover {
+        background-color: rgb(67, 150, 106);
+    }
+
+    #about-container ul li:last-child:hover {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #content {
+        background-image: url('http://www.getuwired.com/devtest/Death_to_stock_photography_Vibrant.jpg');
+        background-size: cover;
+        background-position: center;
+        height: calc(100vh - 10px);
+    }
+
+    #products-dropdown {
+        position: absolute;
+        display: none;
+    }
+
+    #menu-items li:hover #products-dropdown {
+        display: block;
+        top: 49px;
+    }
+
+    #products-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #products-container {
+        background-color: rgb(102, 201, 156);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #products-container ul li {
+        display: block;
+        padding: 20px 5px 20px 5px;
+        width: 233px;
+        color: white;
+        transition: background-color 0.2s;
+        text-align: center;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    #products-container ul li:hover {
+        background-color: rgb(67, 150, 106);
+    }
+
+    #products-container ul li:last-child:hover {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+</style>
+</head>
+<body>
+<div id="menu-bar">
+    <div id="company-name">GETUWIRED</div>
+    <ul id="menu-items">
+        <li>
+            <a href="#">About</a>
+            <div id="about-dropdown">
+                <div id="about-container">
+                    <ul>
+                        <li>OUR STORY</li>
+                        <li>OUR COMMITMENT TO YOU</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">Locations</a>
+            <div id="locations-dropdown">
+                <div id="locations-container">
+                    <ul>
+                        <li>AUSTIN, TX</li>
+                        <li>ATLANTA, GA</li>
+                        <li>SEATTLE, WA</li>
+                        <li>PORTLAND, OR</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">Products</a>
+            <div id="products-dropdown">
+                <div id="products-container">
+                    <ul>
+                        <li>NEW ARRIVALS</li>
+                        <li>FEATURED</li>
+                        <li>TOP RATED</li>
+                        <li>HIS</li>
+                        <li>HERS</li>
+                        <li>KIDS</li>
+                        <li>ACCESSORIES</li>
+                        <li>SPRING CATALOG</li>
+                        <li>THE ESSENTIALS</li>
+                        <li>SALE</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+<div id="content">
+</div>
+</body>
+</html>
